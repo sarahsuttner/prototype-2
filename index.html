@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+      Prototype
+  </title>
+</head>
+
+<body>
+    <h1> Take This Quiz To Find Out Your Ideal Pet</h1>
+		<p>Life can get pretty stressful...especially in times like these.
+		Who doesn't want a cute companion to bring some fun to life! Leave the heavy lifting to us: We'll pick out
+	your perfect pet based on a few short questions about your personality!<br>
+	Let's get started...</p>
+
+        <form id="myForm">
+					What's your favorite color? <input type="text" id="color"><br>
+					What's your favorite food? <input type="text" id="food"><br>
+					What's your favorite flavor of ice cream? <input type="text" id="flavor"><br>
+					How old are you? <input type="text" id="age"><br>
+					What city are you from? <input type="text" id="city"><br>
+					What's your favorite season? <input type="text" id="season"><br>
+
+Do you have kids?
+						<label>
+ 								<input
+									type="radio"
+									name="kids"
+									value="do">
+									Yes
+							</label>
+							<label>
+								<input
+									type="radio"
+									name="kids"
+									value="don't">
+									No
+							</label><br>
+
+Are you in a relationship?
+							<label>
+								<input
+									type="radio"
+									name="relationship"
+									value="single">
+									Single
+							</label>
+							<label>
+								<input
+									type="radio"
+									name="relationship"
+									value="married">
+									Married
+							</label>
+							<label>
+								<input
+									type="radio"
+									name="relationship"
+									value="in a relationship">
+									In a Relationship
+								</label>
+								<label>
+									<input
+										type="radio"
+										name="relationship"
+										value="in a complicated relationship">
+										It's Complicated
+								</label>
+								<label>
+									<input
+									type="radio"
+									name="relationship"
+									value="a widower">
+									Widower
+								</label><br>
+							What's your political party?
+															<label>
+																<input
+																	type="radio"
+																	name="political"
+																	value="the Democratic">
+																	Democratic
+															</label>
+															<label>
+																<input
+																	type="radio"
+																	name="political"
+																	value="the Republican">
+																	Republican
+															</label>
+															<label>
+																<input
+																	type="radio"
+																	name="political"
+																	value="the Libertarian">
+																	Libertarian
+															</label>
+															<label>
+																<input
+																	type="radio"
+																	name="political"
+																	value="the Green">
+																	Green Party
+															</label>
+															<label>
+																<input
+																	type="radio"
+																	name="political"
+																	value="well, a more niche">
+																	Other
+															</label><br>
+
+	What's your gender identity?
+									<label>
+										<input
+											type="radio"
+											name="gender"
+											value="female">
+											Female
+									</label>
+									<label>
+										<input
+											type="radio"
+											name="gender"
+											value="male">
+											Male
+									</label>
+									<label>
+										<input
+											type="radio"
+											name="gender"
+											value="non-binary">
+											Non-binary
+									</label>
+									<label>
+										<input
+											type="radio"
+											name="gender"
+											value="a gender other than the ones listed">
+											Other
+									</label>
+
+</form>
+
+
+<br>
+
+<input type="submit" id="submitButton">
+
+
+
+    <script src=
+"https://code.jquery.com/jquery-2.2.4.min.js">
+  </script>
+
+
+	<div id="answer"></div>
+		<script type="text/javascript">
+$('#color').val(" ");
+$('#food').val(" ");
+$('#flavor').val(" ");
+$('#age').val(" ");
+$('#city').val(" ");
+$('#season').val(" ");
+
+$('#submitButton').on('click', function() {
+		var color = $('#color').val();
+		var food = $('#food').val();
+		var flavor = $('#flavor').val();
+		var age = $('#age').val();
+		var city = $('#city').val();
+		var season = $('#season').val();
+
+	$('#answer').html("Your results... are actually nothing. This quiz, in reality, is useless. The information you entered, however, is very useful. We now know that this page is now your favorite color, "+ color +". Your favorite food is "+ food +
+										". Your favorite ice cream flavor is "+ flavor +". You are "+ age +" years old " +
+										". You are from " + city + ". Your favorite season is " + season + ". More importantly, here are some pretty private things we now know:")
+
+	$('body').css({'background-color':color})
+			  });
+
+
+    </script>
+
+
+			<div id="output2"></div>
+				<script type="text/javascript">
+				// Check the radio button value.
+						$('#submitButton').on('click', function() {
+
+									output2 =
+										$('input[name=kids]:checked',
+											'#myForm').val();
+									document.querySelector(
+										'#output2').textContent = "You " + output2 + " have kids.";
+						});
+				</script>
+
+			<div id="output3"></div>
+				<script type="text/javascript">
+					// Check the radio button value.
+						$('#submitButton').on('click', function() {
+
+									output3 =
+										$('input[name=relationship]:checked',
+											'#myForm').val();
+									document.querySelector(
+										'#output3').textContent = "You're currently " + output3 + ".";
+							});
+				</script>
+
+			<div id="output4"></div>
+									<script type="text/javascript">
+											// Check the radio button value.
+											$('#submitButton').on('click', function() {
+
+											output4 =
+												$('input[name=political]:checked',
+														'#myForm').val();
+											document.querySelector(
+												'#output4').textContent = "You tend to vote with " + output4 + " party.";
+								});
+					</script>
+
+
+	<div id="output5"></div>
+	<script type="text/javascript">
+																// Check the radio button value.
+					$('#submitButton').on('click', function() {
+
+				output5 =
+							$('input[name=gender]:checked',
+									'#myForm').val();
+								document.querySelector(
+					'#output5').textContent = "You identify as " + output5 + ".";
+				});
+	</script>
+
+<div id="output6"></div>
+	<script type="text/javascript">
+																// Check the radio button value.
+					$('#submitButton').on('click', function() {
+
+$('#output6').html("Though this activity was framed as a fun quiz," +
+										" the habit of ignorantly releasing our data with little to no thought is problematic and common." +
+										" The term gamification means to utilize game-like principles of tasks and rewards in real-world scenarios." +
+										" A task like filling out this quiz to receive a result, for example. The information you handed over could be used for targeted advertisements, filter bubbles, and biased media." +
+										" The gamification used in applications like brain-training sites or fitness apps is familiar and often incredibly effective in achieving results." +
+										" What we don't consider, however, is who receives this data and what they do with it. More often than not," +
+										" the quantification of self derived this data is used to aggregate personal micro data into more accurate predictions regarding larger demographics," +
+										" allowing corporations and individuals in charge to govern our bodies, minds, and self perceptions through their invented and implemented goals.")
+
+				});
+	</script>
+
+
+
+</body>
+</html>
